@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr" lang="fr" ng-app="moviesApp">
-	<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"> </script> 
-        <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"> </script> 
-        <script src="./app.js"></script>
-        <script src="./controllers/login.controller.js"></script>
-        <script src="./controllers/movie.controller.js"></script>
-        <script src="./controllers/movies.controller.js"></script>
-        <script src="./controllers/admin.controller.js"></script>
-        <script src="./components/login.component.js"></script>
-        <script src="./components/movie.component.js"></script>
-        <script src="./components/movies.component.js"></script>
-        <script src="./components/admin.component.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./templates/admin.template.js"></script>
+    <script src="./templates/login.template.js"></script>
+    <script src="./templates/movie.template.js"></script>
+    <script src="./templates/movies.template.js"></script>
+    <script src="./controllers/login.controller.js"></script>
+    <script src="./controllers/movie.controller.js"></script>
+    <script src="./controllers/movies.controller.js"></script>
+    <script src="./controllers/admin.controller.js"></script>
+    <script src="./components/login.component.js"></script>
+    <script src="./components/movie.component.js"></script>
+    <script src="./components/movies.component.js"></script>
+    <script src="./components/admin.component.js"></script>
+</head>
 
-	<body>
-            <h1>LCP Movies</h1>
+<body>
+<h1>LCP Movies</h1>
 
-            <a href="#/">Home</a>
-            <a href="#/login">login</a>
-            <a href="#/movie">One movie</a>
-            <a href="#/movies">Movies</a>
-            
-            <div ng-view></div>
+<a href="#/">Home</a>
+<a href="#/login">login</a>
+<a href="#/movie">One movie</a>
+<a href="#/movies">Movies</a>
 
-            <script>
-                moviesApp.config(function ($routeProvider){
-                    $routeProvider
-                        .when('/', {
-                            templateUrl: './views/movies.html',
-                        })
-                        .when('/movie', {
-                            templateUrl: './views/movie.html',
-                        })
-                        .when('/login', {
-                            templateUrl: './views/login.html',
-                        })
-                        .when('/admin', {
-                            templateUrl: './views/admin.html',
-                        })
-                        .otherwise({redirectTo: "/"});
-                })
+<div ng-view></div>
 
-                let movies = []
+<script>
+    mvApp.config(function ($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: './views/movies.html',
+            })
+            .when('/movie', {
+                templateUrl: './views/movie.html',
+            })
+            .when('/login', {
+                templateUrl: './views/login.html',
+            })
+            .when('/admin', {
+                templateUrl: './views/admin.html',
+            })
+            .otherwise({redirectTo: "/"});
+    })
 
-                moviesApp.controller('MoviesController', function ($scope) { 
-                }); 
+    let movies = []
 
-                moviesApp.controller('MovieController', function ($scope) { 
-                }); 
+    mvApp.controller('MoviesController', function ($scope) {
+    });
 
-                moviesApp.controller('LoginController', function ($scope) { 
-                }); 
+    mvApp.controller('MovieController', function ($scope) {
+    });
 
-                moviesApp.controller('AdminController', function ($scope) { 
-                }); 
-            </script>
-    </body>
+    mvApp.controller('LoginController', function ($scope) {
+    });
+
+    mvApp.controller('AdminController', function ($scope) {
+    });
+</script>
+</body>
 </html>

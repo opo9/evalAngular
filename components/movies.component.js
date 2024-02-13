@@ -1,6 +1,6 @@
 angular.
 module('moviesApp').
 component('movies',{
-    template: `MoviesTemplate`,
+    template: MoviesTemplate,
     controller : 'MoviesController'
 })
