@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" lang="fr" ng-app="moviesApp">
+<html lang="fr" ng-app="moviesApp">
 	<head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -30,19 +30,19 @@
                 moviesApp.config(function ($routeProvider){
                     $routeProvider
                         .when('/', {
-                            templateUrl: './templates/movies.component.html',
+                            templateUrl: './templates/movies.template.html',
                             controller: "MoviesController",
                         })
                         .when('/movie', {
-                            templateUrl: './templates/movie.component.html',
+                            templateUrl: './templates/movie.template.html',
                             controller: 'MovieController',
                         })
                         .when('/login', {
-                            templateUrl: './templates/login.component.html',
+                            templateUrl: './templates/login.template.html',
                             controller: 'LoginController'
                         })
                         .when('/admin', {
-                            templateUrl: './templates/admin.component.html',
+                            templateUrl: './templates/admin.template.html',
                             controller: 'AdminController'
                         })
                         .otherwise({redirectTo: "/"});
