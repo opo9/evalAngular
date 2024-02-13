@@ -3,13 +3,16 @@
 	<head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"> </script> 
-        <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"> </script> 
+        <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"> </script> 
+        <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"> </script> 
+
         <script src="./app.js"></script>
+
         <script src="./controllers/login.controller.js"></script>
         <script src="./controllers/movie.controller.js"></script>
         <script src="./controllers/movies.controller.js"></script>
         <script src="./controllers/admin.controller.js"></script>
+
         <script src="./components/login.component.js"></script>
         <script src="./components/movie.component.js"></script>
         <script src="./components/movies.component.js"></script>
@@ -30,16 +33,16 @@
                 moviesApp.config(function ($routeProvider){
                     $routeProvider
                         .when('/', {
-                            templateUrl: './templates/movies.html',
+                            templateUrl: './views/movies.html',
                         })
                         .when('/movie', {
-                            templateUrl: './templates/movie.html',
+                            templateUrl: './views/movie.html',
                         })
                         .when('/login', {
-                            templateUrl: './templates/login.html',
+                            templateUrl: './views/login.html',
                         })
                         .when('/admin', {
-                            templateUrl: './templates/admin.html',
+                            templateUrl: './views/admin.html',
                         })
                         .otherwise({redirectTo: "/"});
                 })

@@ -1,4 +1,5 @@
-moviesApp.component('login',{
-    template: `LoginTemplate`,
+moviesApp.
+component('login',{
+    template: LoginTemplate,
     controller : 'LoginController'
 })
