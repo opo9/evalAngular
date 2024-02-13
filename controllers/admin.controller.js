@@ -1,3 +1,3 @@
-moviesApp.controller('AdminController', function(){
+mvApp.controller('AdminController', function(){
     
 })
