@@ -17,7 +17,7 @@
     </head>
 
 	<body>
-            <h1>Pierre Movies</h1>
+            <h1>LCP Movies</h1>
 
             <a href="#/">Home</a>
             <a href="#/login">login</a>
@@ -30,20 +30,16 @@
                 moviesApp.config(function ($routeProvider){
                     $routeProvider
                         .when('/', {
-                            templateUrl: './templates/movies.component.html',
-                            controller: "MoviesController",
+                            templateUrl: './templates/movies.html',
                         })
                         .when('/movie', {
-                            templateUrl: './templates/movie.component.html',
-                            controller: 'MovieController',
+                            templateUrl: './templates/movie.html',
                         })
                         .when('/login', {
-                            templateUrl: './templates/login.component.html',
-                            controller: 'LoginController'
+                            templateUrl: './templates/login.html',
                         })
                         .when('/admin', {
-                            templateUrl: './templates/admin.component.html',
-                            controller: 'AdminController'
+                            templateUrl: './templates/admin.html',
                         })
                         .otherwise({redirectTo: "/"});
                 })
