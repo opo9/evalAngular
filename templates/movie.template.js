@@ -19,4 +19,5 @@ var MovieTemplate =
     '</div>' +
     '</div>' +
     '</div>';
+    ;
 
