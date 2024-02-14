@@ -2,7 +2,7 @@ var LoginTemplate =
 `
 <button ng-click="$ctrl.toggleForm('connexion')">Connexion</button>
 <button ng-click="$ctrl.toggleForm('register')">S'enregistrer</button>
-<div ng-show="!showElement">
+<div ng-show="!showElement" class=" w-75 h-50 d-flex flex-column align-self-center justify-self-center">
 <h1>Login</h1>
     <form>
         <div class="form-group">
@@ -22,7 +22,7 @@ var LoginTemplate =
 <br/>
 <br/>
 <br/>
-<div ng-show="showElement">
+<div ng-show="showElement" class="w-50 h-50 d-flex align-self-center justify-self-center">
     <h1>Register</h1>
     <form>
         <div class="form-group">
