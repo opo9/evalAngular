@@ -41,17 +41,17 @@ mvApp.factory('MoviesService', function(GradesService) {
         let grade = [4.5, 5, 6];
     
     return {
-        getMovies: function() {
+        getMovies: function () {
             return movies;
         },
-        getMovieById: function(id){
-            for(elem of movies){
-                if(elem.id == id){
-                  return elem
+        getMovieById: function (id) {
+            for (elem of movies) {
+                if (elem.id == id) {
+                    return elem
                 }
             }
         },
-        addMovie: function(movie) {
+        addMovie: function (movie) {
             movies.push(movie);
         },
         averageGrade: function(){

@@ -6,14 +6,14 @@ mvApp.factory('UsersService', function () {
             firstname: "Chulee",
             mail: "bedos.chulee1@gmail.com",
             pwd: "azerty",
-            level: 1,
+            level: 0,
             connected: false
         },
         {
             id: 2,
             name: "Smati",
             firstname: "Lina",
-            email: "smati.lina@gmail.com",
+            mail: "smati.lina@gmail.com",
             pwd: "pwd",
             level: 2,
             connected: false
@@ -22,7 +22,7 @@ mvApp.factory('UsersService', function () {
             id: 3,
             name: "Hoareau",
             firstname: "Paul",
-            email: "hoareau.paul@gmail.com",
+            mail: "hoareau.paul@gmail.com",
             pwd: "paulo",
             level: 0,
             connected: false
@@ -47,12 +47,13 @@ mvApp.factory('UsersService', function () {
             }
         },
         isUser: function (email, pwd) {
+            let userFind = null
             users.forEach(function (user) {
-                if (user.mail === emailValue && user.pwd === pwdValue) {
-                    user.connected = true;
-                    return (user);
+                if (user.mail === email && user.pwd === pwd) {
+                   userFind = user 
                 }
             });
+            return userFind;
         },
         addUser: function (user) {
             users.push(user);
