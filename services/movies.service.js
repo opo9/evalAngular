@@ -2,7 +2,7 @@ mvApp.factory('MoviesService', function() {
         let movies = [
             {
                 id:1,
-                title: "title1",
+                title: "cTitle1",
                 desc: "desc1",
                 checked: false,
                 grade: [
@@ -29,8 +29,35 @@ mvApp.factory('MoviesService', function() {
             },
             {
                 id:2,
-                title: "title2",
+                title: "bTitle2",
                 desc: "desc2",
+                checked: false,
+                grade: [
+                            {
+                                star: 5
+                            },
+                            {
+                                star: 4
+                            },
+                            {
+                                star: 3
+                            },
+                        ],
+                comments: [
+                    {
+                        user: "bob",
+                        data: "super"
+                    },
+                    {
+                        user: "jean",
+                        data: "null"
+                    },
+                ]
+            },
+{
+                id:3,
+                title: "aTitle3",
+                desc: "desc3",
                 checked: false,
                 grade: [
                             {
@@ -59,7 +86,7 @@ mvApp.factory('MoviesService', function() {
     
     return {
         getMovies: function() {
-            return movies;
+            return movies.sort((a, b) => a.title.localeCompare(b.title));
         },
         getMovieById: function(id){
             for(elem of movies){
@@ -77,6 +104,6 @@ mvApp.factory('MoviesService', function() {
                 sum += elem;
             }
             return Math.round(sum / grade.length);
-    }
+        }
     };
 });
