@@ -1,3 +1,3 @@
-mvApp.controller('MovieController', 'MoviesService', function(MoviesService){
+mvApp.controller('MovieController', function(MoviesService){
     this.movie = MoviesService.getMovieById(1);
 })
