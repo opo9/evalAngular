@@ -24,35 +24,85 @@
     <script src="./components/admin.component.js"></script>
 </head>
 
-<body>
-<h1>LCP Movies</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular-route.min.js"></script>
 
-<a href="#/">Home</a>
-<a href="#/login">login</a>
-<a href="#/movie">One movie</a>
-<a href="#/movies">Movies</a>
+        <script src="./app.js"></script>
 
-<div ng-view></div>
+        <script src="./templates/admin.template.js"></script>
+        <script src="./templates/login.template.js"></script>
+        <script src="./templates/movie.template.js"></script>
+        <script src="./templates/movies.template.js"></script>
 
-<script>
-    mvApp.config(function ($routeProvider) {
-        $routeProvider
-            .when('/', {
-                templateUrl: './views/movies.html',
-            })
-            .when('/movie', {
-                templateUrl: './views/movie.html',
-            })
-            .when('/login', {
-                templateUrl: './views/login.html',
-            })
-            .when('/admin', {
-                templateUrl: './views/admin.html',
-            })
-            .otherwise({redirectTo: "/"});
-    })
+        <script src="./controllers/login.controller.js"></script>
+        <script src="./controllers/movie.controller.js"></script>
+        <script src="./controllers/movies.controller.js"></script>
+        <script src="./controllers/admin.controller.js"></script>
 
-    let movies = []
+        <script src="./components/login.component.js"></script>
+        <script src="./components/movie.component.js"></script>
+        <script src="./components/movies.component.js"></script>
+        <script src="./components/admin.component.js"></script>
+    </head>
+
+    <body>
+        <h1>LCP Movies</h1>
+
+        <a href="#/">Home</a>
+        <a href="#/login">login</a>
+        <a href="#/movie">One movie</a>
+        <a href="#/movies">Movies</a>
+
+        <div ng-view></div>
+
+        <script>
+            mvApp.config(function ($routeProvider) {
+                $routeProvider
+                    .when('/', {
+                        templateUrl: './views/movies.html',
+                    })
+                    .when('/movie', {
+                        templateUrl: './views/movie.html',
+                    })
+                    .when('/login', {
+                        templateUrl: './views/login.html',
+                    })
+                    .when('/admin', {
+                        templateUrl: './views/admin.html',
+                    })
+                    .otherwise({ redirectTo: "/" });
+            })
+
+            let movies = [
+                {
+                    title: "title1",
+                    desc: "desc1",
+                    grade: [
+                                {
+                                    star: 5
+                                },
+                                {
+                                    star: 4
+                                },
+                                {
+                                    star: 3
+                                },
+                            ],
+                    comment: [
+                        {
+                            user: "bob",
+                            data: "super"
+                        },
+                        {
+                            user: "jean",
+                            data: "null"
+                        },
+                    ]
+                },
+                {
 
 </script>
 </body>
