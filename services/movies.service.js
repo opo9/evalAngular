@@ -58,6 +58,13 @@ mvApp.factory('MoviesService', function($rootScope) {
         getMovies: function() {
             return movies;
         },
+        getMovieByTitle: function(title){
+            for(elem of movies){
+                if(elem.title == title){
+                  return elem
+                }
+            }
+        },
         addMovie: function(movie) {
             movies.push(movie);
         }
