@@ -31,10 +31,7 @@ mvApp.factory('GradesService', function($rootScope, $routeParams, UsersService) 
             grade: 3,
         },
     ]
-function getGradeByMovieAndUser(){
 
-
-}
 return {
     getGradeByMovieAndUser: function(){
 
@@ -81,12 +78,12 @@ return {
                 grade: grade,
             }
             this.addGradeToMovie(gradeJSON);
-            console.log(grades);
+
         }
         else{
             var gradeJSON = this.getGradeByid(id_movie);
             gradeJSON.grade = grade;
-            console.log(grades);
+
 
         }
 
@@ -101,7 +98,7 @@ return {
         total = 0;
         grades.forEach(function(grade){
             if(grade.movie_id == movieId){
-                console.log(movieId, "+1");
+
                 total ++;
             }
         });
