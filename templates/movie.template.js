@@ -22,7 +22,7 @@ var MovieTemplate =
             </div>
         </div>
     </div>
-    <form>
+    <form ng-if="$ctrl.usersService.getCurrentUserId() != null">
         <div class="form-group">
             <label for="exampleFormControlInput1">Note</label>
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
@@ -43,7 +43,7 @@ var MovieTemplate =
             </div>
         </div>
     </form>
-    <form>
+    <form ng-if="$ctrl.usersService.getCurrentUserId() != null">
         <div class="form-group">
             <label for="exampleFormControlInput1">Commentaire</label>
             <textarea class="form-control" ng-model="$ctrl.newComment"  placeholder=""></textarea>
