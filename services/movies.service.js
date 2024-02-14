@@ -55,7 +55,7 @@ mvApp.factory('MoviesService', function() {
                 ]
             }
         ]
-        let grade = [4, 5, 6];
+        let grade = [4.5, 5, 6];
     
     return {
         getMovies: function() {
@@ -72,11 +72,11 @@ mvApp.factory('MoviesService', function() {
             movies.push(movie);
         },
         averageGrade: function(){
-        let sum = 0;
-        for(elem of grade){
-            sum += elem;
-        }
-        return sum/grade.length;
+            let sum = 0;
+            for(elem of grade){
+                sum += elem;
+            }
+            return Math.round(sum / grade.length);
     }
     };
 });
