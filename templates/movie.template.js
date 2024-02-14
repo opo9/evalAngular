@@ -27,11 +27,11 @@ var MovieTemplate =
             <label for="exampleFormControlInput1">Note</label>
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
               
-              <i ng-click="$ctrl.gradesService.addGrade(1, $ctrl.movie.id)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
-              <i ng-click="$ctrl.gradesService.addGrade(2, $ctrl.movie.id)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
-              <i ng-click="$ctrl.gradesService.addGrade(3, $ctrl.movie.id)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
-              <i ng-click="$ctrl.gradesService.addGrade(4, $ctrl.movie.id)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
-              <i ng-click="$ctrl.gradesService.addGrade(5, $ctrl.movie.id)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-click="$ctrl.GradesService.addGrade(1)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-click="$ctrl.GradesService.addGrade(2)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-click="$ctrl.GradesService.addGrade(3)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-click="$ctrl.GradesService.addGrade(4)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-click="$ctrl.GradesService.addGrade(5)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
               
                
               

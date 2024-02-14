@@ -1,4 +1,4 @@
-mvApp.factory('GradesService', function($rootScope, UsersService) {
+mvApp.factory('GradesService', function($rootScope, $routeParams, UsersService) {
     let grades = [
         {
             id:1,
@@ -47,7 +47,8 @@ return {
             }
         }
     },
-    addGrade: function(grade, id_movie) {
+    addGrade: function(grade ) {
+        var id_movie = $routeParams.movieId;
         var id_user = parseInt(UsersService.getCurrentUserId());
 
         if(this.userAlreadyGrade(id_movie) === false){
@@ -70,7 +71,7 @@ return {
 
     },
     addGradeToMovie : function(grade){
-        grade.movie = id_movie;
+        
         grades.push(grade);
 
     },
