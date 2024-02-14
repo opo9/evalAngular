@@ -25,18 +25,19 @@ var MovieTemplate =
     <form>
         <div class="form-group">
             <label for="exampleFormControlInput1">Note</label>
-            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group" >
               
-              <i ng-click="$ctrl.GradesService.addGrade(1)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
-              <i ng-click="$ctrl.GradesService.addGrade(2)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
-              <i ng-click="$ctrl.GradesService.addGrade(3)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
-              <i ng-click="$ctrl.GradesService.addGrade(4)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
-              <i ng-click="$ctrl.GradesService.addGrade(5)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-model ="$ctrl.grade1" ng-click="$ctrl.GradesService.addGrade(1, this)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer; "></i>
+              <i ng-model ="$ctrl.grade2" ng-click="$ctrl.GradesService.addGrade(2, this)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-model ="$ctrl.grade3" ng-click="$ctrl.GradesService.addGrade(3, this)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-model ="$ctrl.grade4" ng-click="$ctrl.GradesService.addGrade(4, this)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-model ="$ctrl.grade5" ng-click="$ctrl.GradesService.addGrade(5, this)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
               
                
               
             </div>
         </div>
+        <div>Votre note : {{$ctrl.GradesService.getGradeByMovieAndUser()}}</div>
     </form>
     <form>
         <div class="form-group">
