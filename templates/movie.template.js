@@ -7,7 +7,7 @@ var MovieTemplate =
                 <h2 class="card-title">{{ $ctrl.movie.title }}</h2>
                 <p class="card-text">{{ $ctrl.movie.desc }}</p>
                 
-                <p class="card-text">Average grade : {{ $ctrl.movie.averageGrade }}</p>
+                <p class="card-text">Average grade : </p>
                 <p class="card-text">Comments:</p>
                 <ul class="list-group">
                     <li class="list-group-item" ng-repeat="comment in $ctrl.movie.comments">{{ comment.user }}: {{ comment.data }}</li>

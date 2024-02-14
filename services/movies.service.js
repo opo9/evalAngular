@@ -7,7 +7,7 @@ mvApp.factory('MoviesService', function(GradesService) {
                 title: "title1",
                 desc: "desc1",
                 checked: false,
-                grade: GradesService.getGradesByMovieId(1),
+                average_grade: this.averageGrade(1),
                 comments: [
                     {
                         user: "bob",
@@ -24,7 +24,7 @@ mvApp.factory('MoviesService', function(GradesService) {
                 title: "title2",
                 desc: "desc2",
                 checked: false,
-                grade: GradesService.getGradesByMovieId(2),
+                average_grade: this.averageGrade(2),
                 comments: [
                     {
                         user: "bob",
@@ -38,7 +38,7 @@ mvApp.factory('MoviesService', function(GradesService) {
             }
         ]
         console.log(movies)
-        let grade = [4.5, 5, 6];
+
     
     return {
         getMovies: function () {
@@ -54,10 +54,11 @@ mvApp.factory('MoviesService', function(GradesService) {
         addMovie: function (movie) {
             movies.push(movie);
         },
-        averageGrade: function(){
+        averageGrade: function(id){
+            let grades = GradesService.getGradesByMovieId(id)
             let sum = 0;
-            for(elem of grade){
-                sum += elem;
+            for(elem of grades){
+                sum += elem.star;
             }
             return Math.round(sum / grade.length);
     }
