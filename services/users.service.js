@@ -26,11 +26,21 @@ mvApp.factory('UsersService', function () {
             pwd: "paulo",
             level: 0,
             connected: false
-        }]
-
+        }];
+    
     return {
+        setCurrentUser: function(user){
+            localStorage.setItem("user", JSON.stringify(user.id));
+        },
         getUsers: function () {
             return users;
+        },
+        logout: function(){
+            localStorage.removeItem("user");
+        },
+        getCurrentUserId: function(){
+            console.log(localStorage.getItem("user"));
+            return localStorage.getItem("user");
         },
         getUserById: function (id) {
             for (elem of users) {
@@ -41,7 +51,7 @@ mvApp.factory('UsersService', function () {
         },
         getUserByEmail: function (email) {
             for (elem of users) {
-                if (elem.id == id) {
+                if (elem.mail == email) {
                     return elem
                 }
             }
@@ -54,6 +64,17 @@ mvApp.factory('UsersService', function () {
                 }
             });
             return userFind;
+        },
+        isAdmin: function(){
+            let currentUserId = this.getCurrentUserId;
+            let isAdmin = false;
+            if(currentUserId){
+                let user = this.getUserById(currentUserId);
+                if(user && user.level == 1){
+                    isAdmin = true
+                }
+            }
+            return isAdmin;
         },
         addUser: function (user) {
             users.push(user);

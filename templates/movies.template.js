@@ -1,6 +1,13 @@
 var MoviesTemplate = `
+<h1>LCP Movies</h1>
 
-<div class="container">
+<a href="#/movie">Home</a>
+<a href="#/movies">Movies</a>
+<a href="#/login" ng-if="$ctrl.usersService.getCurrentUserId() == null">login</a>
+<button ng-if="$ctrl.usersService.getCurrentUserId() != null" ng-click="$ctrl.usersService.logout()">logout</button>
+<a href="#/admin" ng-if="$ctrl.usersService.isAdmin()">admin</a>
+
+<div class="container mt-2">
     <div class="row">
         <div class="col-md-6" ng-repeat="movie in $ctrl.movies">
         <div class="card mb-3">
