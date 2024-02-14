@@ -10,7 +10,7 @@ mvApp.factory('MoviesService', function(GradesService, CommentsService) {
             },
             {
                 id:2,
-                title: "Forrest Gump",
+                title: "ZForrest Gump",
                 desc: "Quelques décennies d'histoire américaine, des années 1940 à la fin du XXème siècle, à travers le regard et l'étrange odyssée d'un homme simple et pur, Forrest Gump.",
                 checked: false,
                 average_grade: calculateAverageGrade(2)? calculateAverageGrade(2) : "Pas de note",
@@ -18,7 +18,7 @@ mvApp.factory('MoviesService', function(GradesService, CommentsService) {
             },
 {
                 id:3,
-                title: "La Liste de Schindler",
+                title: "Schindler",
                 desc: "Evocation des années de guerre d'Oskar Schindler, industriel autrichien rentré à Cracovie en 1939 avec les troupes allemandes. Il va, tout au long de la guerre, protéger des juifs en les faisant travailler dans sa fabrique.",
                 checked: false,
                 average_grade: calculateAverageGrade(3)? calculateAverageGrade(3) : "Pas de note",
