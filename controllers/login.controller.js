@@ -1,4 +1,4 @@
-mvApp.controller('LoginController', ['$scope', function($scope){
+mvApp.controller('LoginController', ['$scope', function($scope, $location){
     $scope.showElement = false;
     $scope.users = [
         {
@@ -16,7 +16,7 @@ mvApp.controller('LoginController', ['$scope', function($scope){
             firstname   :   "Lina",
             email       :   "smati.lina@gmail.com",
             pwd         :   "pwd",
-            level       :   1,
+            level       :   2,
             connected   :   false
         },
         {
@@ -45,10 +45,19 @@ mvApp.controller('LoginController', ['$scope', function($scope){
         });
         if (foundUser !== null) {
             $scope.return_formconnexion = "Connexion réussie";
+            if(foundUser.level === 1) {
+                window.location.href = '#/';
+
+            }
+            else{
+
+            }
+
         } else {
             $scope.return_formconnexion = "Utilisateur ou mot de passe incorrect.";
         }
-
+        $scope.pwd = '';
+        $scope.email = '';
 
 
 
@@ -71,7 +80,7 @@ mvApp.controller('LoginController', ['$scope', function($scope){
         $scope.email = '';
         $scope.name = '';
         $scope.firstname = '';
-        console.log($scope.users);
+
     };
     this.toggleForm = function(data) {
         $scope.showElement = !$scope.showElement;
