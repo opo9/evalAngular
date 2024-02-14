@@ -27,6 +27,13 @@ mvApp.factory('MoviesService', function () {
         },
         addMovie: function (movie) {
             movies.push(movie);
-        }
+        },
+        averageGrade: function(){
+            let sum = 0;
+            for(elem of grade){
+                sum += elem;
+            }
+            return Math.round(sum / grade.length);
+    }
     };
 });
