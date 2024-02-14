@@ -17,7 +17,7 @@ var MovieTemplate =
                 <p class="card-text">Average grade : {{ $ctrl.movie.average_grade }}</p>
                 <p class="card-text">Comments:</p>
                 <ul class="list-group">
-                    <li class="list-group-item" ng-repeat="comment in $ctrl.movie.comments">{{ comment.user }}: {{ comment.data }}</li>
+                    <li class="list-group-item" ng-repeat="comment in $ctrl.movie.comments">{{ comment.comment }}</li>
                 </ul>
             </div>
         </div>
@@ -26,19 +26,19 @@ var MovieTemplate =
         <div class="form-group">
             <label for="exampleFormControlInput1">Note</label>
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="1">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="1" ng-click="$ctrl.GradesService.addGrade(1)">
               <label class="" for="btnradio1"><i class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i></label>
                
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="2">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="2" ng-click="$ctrl.GradesService.addGrade(2)">
               <label class="" for="btnradio1"><i class="fa-regular fa-star" style="font-size: 2rem;color:#FFD43B; cursor:pointer"></i></label>
             
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="3">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="3" ng-click="$ctrl.GradesService.addGrade(3)">
               <label class="" for="btnradio1"><i class="fa-regular fa-star" style="font-size: 2rem;color:#FFD43B; cursor:pointer"></i></label>
               
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="4">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="4" ng-click="$ctrl.GradesService.addGrade(4)">
               <label class="" for="btnradio1"><i class="fa-regular fa-star" style="font-size: 2rem;color:#FFD43B; cursor:pointer"></i></label>
               
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="5">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="5" ng-click="$ctrl.GradesService.addGrade(5)">
               <label class="" for="btnradio1"><i class="fa-regular fa-star" style="font-size: 2rem;color:#FFD43B; cursor:pointer"></i></label>
             </div>
         </div>
