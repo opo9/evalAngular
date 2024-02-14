@@ -7,7 +7,7 @@ var MoviesTemplate = `
             <div class="card-body">
                 <!--<img src="{{ movie.image }}" class="card-img-top" alt="image à rajouté">-->
                 <h2 class="card-title">{{ movie.title }}</h2>
-                <p class="card-text">{{ movie.description }}</p>
+                <p class="card-text">{{ movie.desc }}</p>
             </div>
         </div>
     </div>

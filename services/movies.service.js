@@ -4,7 +4,7 @@ mvApp.factory('MoviesService', function(GradesService) {
         let movies = [
             {
                 id:1,
-                title: "title1",
+                title: "cTitle1",
                 desc: "desc1",
                 checked: false,
                 average_grade: this.averageGrade(1),
@@ -21,10 +21,37 @@ mvApp.factory('MoviesService', function(GradesService) {
             },
             {
                 id:2,
-                title: "title2",
+                title: "bTitle2",
                 desc: "desc2",
                 checked: false,
                 average_grade: this.averageGrade(2),
+                comments: [
+                    {
+                        user: "bob",
+                        data: "super"
+                    },
+                    {
+                        user: "jean",
+                        data: "null"
+                    },
+                ]
+            },
+{
+                id:3,
+                title: "aTitle3",
+                desc: "desc3",
+                checked: false,
+                grade: [
+                            {
+                                star: 5
+                            },
+                            {
+                                star: 4
+                            },
+                            {
+                                star: 3
+                            },
+                        ],
                 comments: [
                     {
                         user: "bob",
@@ -41,8 +68,8 @@ mvApp.factory('MoviesService', function(GradesService) {
 
     
     return {
-        getMovies: function () {
-            return movies;
+        getMovies: function() {
+            return movies.sort((a, b) => a.title.localeCompare(b.title));
         },
         getMovieById: function (id) {
             for (elem of movies) {
@@ -61,6 +88,6 @@ mvApp.factory('MoviesService', function(GradesService) {
                 sum += elem.star;
             }
             return Math.round(sum / grade.length);
-    }
+        }
     };
 });
