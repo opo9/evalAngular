@@ -86,5 +86,5 @@ mvApp.controller('MoviesController', ['$scope', function($scope){
                 ]
             }
         ];
-    console.log(this.movies);
+
 }])
