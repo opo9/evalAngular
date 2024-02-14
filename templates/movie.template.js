@@ -1,6 +1,14 @@
 var MovieTemplate =
     `
-    <div class="col-md-6" >
+    <h1>LCP Movies</h1>
+
+    <a href="#/movie">Home</a>
+    <a href="#/movies">Movies</a>
+    <a href="#/login" ng-if="$ctrl.usersService.getCurrentUserId() == null">login</a>
+    <button ng-if="$ctrl.usersService.getCurrentUserId() != null" ng-click="$ctrl.usersService.logout()">logout</button>
+    <a href="#/admin" ng-if="$ctrl.usersService.isAdmin()">admin</a>
+
+    <div class="col-md-6 mt-2" >
         <div class="card mb-3">
             <div class="card-body">
                 <!--<img src="{{ $ctrl.movie.image }}" class="card-img-top" alt="image à rajouté">-->
