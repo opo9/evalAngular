@@ -16,7 +16,34 @@ var MovieTemplate =
             </div>
         </div>
     </div>
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Note</label>
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="1">
+              <label class="" for="btnradio1"><i class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B"></i></label>
+               
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="2">
+              <label class="" for="btnradio1"><i class="fa-regular fa-star" style="font-size: 2rem;color:#FFD43B"></i></label>
+            
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="3">
+              <label class="" for="btnradio1"><i class="fa-regular fa-star" style="font-size: 2rem;color:#FFD43B"></i></label>
+              
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="4">
+              <label class="" for="btnradio1"><i class="fa-regular fa-star" style="font-size: 2rem;color:#FFD43B"></i></label>
+              
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="5">
+              <label class="" for="btnradio1"><i class="fa-regular fa-star" style="font-size: 2rem;color:#FFD43B"></i></label>
+            </div>
+        </div>
+    </form>
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Commentaire</label>
+            <textarea class="form-control" id="" placeholder=""></textarea>
+        </div>
+    </form>
     
-    `
-    ;
+`
+;
 
