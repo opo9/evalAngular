@@ -26,7 +26,7 @@ mvApp.factory('CommentsService', function($rootScope) {
         },
         getCommentsByMovieId: function(id){
             let commentsByMovie = [];
-            for(elem of grades){
+            for(elem of comments){
                 if(elem.movie_id == id){
                     let comment = {comment: elem.comment};
                     commentsByMovie.push(comment);
