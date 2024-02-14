@@ -7,7 +7,7 @@ mvApp.factory('MoviesService', function(GradesService) {
                 title: "cTitle1",
                 desc: "desc1",
                 checked: false,
-                average_grade: this.averageGrade(1),
+                average_grade: calculateAverageGrade(1, GradesService),
                 comments: [
                     {
                         user: "bob",
@@ -24,7 +24,7 @@ mvApp.factory('MoviesService', function(GradesService) {
                 title: "bTitle2",
                 desc: "desc2",
                 checked: false,
-                average_grade: this.averageGrade(2),
+                average_grade: calculateAverageGrade(2, GradesService),
                 comments: [
                     {
                         user: "bob",
@@ -41,17 +41,7 @@ mvApp.factory('MoviesService', function(GradesService) {
                 title: "aTitle3",
                 desc: "desc3",
                 checked: false,
-                grade: [
-                            {
-                                star: 5
-                            },
-                            {
-                                star: 4
-                            },
-                            {
-                                star: 3
-                            },
-                        ],
+                average_grade: calculateAverageGrade(3, GradesService) ? calculateAverageGrade(3, GradesService) : "Pas de note",
                 comments: [
                     {
                         user: "bob",
@@ -65,7 +55,17 @@ mvApp.factory('MoviesService', function(GradesService) {
             }
         ]
         console.log(movies)
+    function calculateAverageGrade(id, GradesService) {
+        let grades = GradesService.getGradesByMovieId(id);
 
+        let sum = 0;
+
+        for (let elem of grades) {
+            sum += elem.star;
+        }
+
+        return Math.round(sum / grades.length);
+    }
     
     return {
         getMovies: function() {
@@ -87,7 +87,7 @@ mvApp.factory('MoviesService', function(GradesService) {
             for(elem of grades){
                 sum += elem.star;
             }
-            return Math.round(sum / grade.length);
+            return Math.round(sum / grades.length);
         }
     };
 });
