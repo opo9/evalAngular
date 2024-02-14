@@ -1,8 +1,7 @@
 var MoviesTemplate = `
 <h1>LCP Movies</h1>
 
-<a href="#/movie">Home</a>
-<a href="#/movies">Movies</a>
+<a href="#/">Home</a>
 <a href="#/login" ng-if="$ctrl.usersService.getCurrentUserId() == null">login</a>
 <button ng-if="$ctrl.usersService.getCurrentUserId() != null" ng-click="$ctrl.usersService.logout()">logout</button>
 <a href="#/admin" ng-if="$ctrl.usersService.isAdmin()">admin</a>
@@ -15,6 +14,7 @@ var MoviesTemplate = `
                 <!--<img src="{{ movie.image }}" class="card-img-top" alt="image à rajouté">-->
                 <h2 class="card-title">{{ movie.title }}</h2>
                 <p class="card-text">{{ movie.desc }}</p>
+                <a href="#/movie/{{movie.id}}">Voir plus</a>
             </div>
         </div>
     </div>
