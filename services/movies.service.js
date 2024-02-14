@@ -1,4 +1,4 @@
-mvApp.factory('MoviesService', function(GradesService) {
+mvApp.factory('MoviesService', function(GradesService, CommentsService) {
 
 
         let movies = [
@@ -8,16 +8,7 @@ mvApp.factory('MoviesService', function(GradesService) {
                 desc: "desc1",
                 checked: false,
                 grade: GradesService.getGradesByMovieId(1),
-                comments: [
-                    {
-                        user: "bob",
-                        data: "super"
-                    },
-                    {
-                        user: "jean",
-                        data: "null"
-                    },
-                ]
+                comments: CommentsService.getCommentsByMovieId(1)
             },
             {
                 id:2,
