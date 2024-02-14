@@ -15,7 +15,7 @@ mvApp.factory('MoviesService', function($rootScope) {
                                 star: 3
                             },
                         ],
-                comment: [
+                comments: [
                     {
                         user: "bob",
                         data: "super"
@@ -41,7 +41,7 @@ mvApp.factory('MoviesService', function($rootScope) {
                                 star: 3
                             },
                         ],
-                comment: [
+                comments: [
                     {
                         user: "bob",
                         data: "super"
