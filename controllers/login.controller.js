@@ -1,4 +1,4 @@
-mvApp.controller('LoginController', ['$scope', function($scope, UsersService){
+mvApp.controller('LoginController', ['$scope', 'UsersService',function($scope, UsersService){
     $scope.showElement = false;
     $scope.users = UsersService.getUsers();
 
@@ -44,4 +44,3 @@ mvApp.controller('LoginController', ['$scope', function($scope, UsersService){
         $scope.showElement = !$scope.showElement;
     };
 }]);
-
