@@ -1,1 +1,11 @@
-var MoviesTemplate = `<h1>test movies</h1>`;
+var MoviesTemplate = `
+<table>
+    <thead>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+</table>`;
