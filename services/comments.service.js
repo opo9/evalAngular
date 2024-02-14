@@ -18,6 +18,24 @@ mvApp.factory('CommentsService', function($rootScope) {
             user: 3,
             comment: "whaou",
         },
+        {
+            id:4,
+            movie_id:2,
+            user: 3,
+            comment: "bof",
+        },
+        {
+            id:5,
+            movie_id:2,
+            user: 3,
+            comment: "pas mal",
+        },
+        {
+            id:6,
+            movie_id:3,
+            user: 3,
+            comment: "super",
+        }
     ]
 
     return {

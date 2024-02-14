@@ -15,14 +15,16 @@ var MovieTemplate =
                 <p class="card-text">{{ $ctrl.movie.desc }}</p>
                 
                 <p class="card-text">Average grade : {{ $ctrl.movie.average_grade }}</p>
+                <p class="card-text">Total grade : {{ $ctrl.GradesService.getNumberOfgradeMovie($ctrl.movie.id) }}</p>
                 <p class="card-text">Comments:</p>
                 <ul class="list-group">
                     <li class="list-group-item" ng-repeat="comment in $ctrl.movie.comments">{{ comment.comment }}</li>
                 </ul>
+               
             </div>
         </div>
     </div>
-    <form>
+    <form ng-if="$ctrl.usersService.getCurrentUserId() != null">
         <div class="form-group">
             <label for="exampleFormControlInput1">Note</label>
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group" >
@@ -39,7 +41,7 @@ var MovieTemplate =
         </div>
         <div>Votre note : {{$ctrl.GradesService.getGradeByMovieAndUser()}}</div>
     </form>
-    <form>
+    <form ng-if="$ctrl.usersService.getCurrentUserId() != null">
         <div class="form-group">
             <label for="exampleFormControlInput1">Commentaire</label>
             <textarea class="form-control" ng-model="$ctrl.newComment"  placeholder=""></textarea>

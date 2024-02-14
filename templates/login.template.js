@@ -7,10 +7,10 @@ var LoginTemplate =
 <a href="#/admin" ng-if="$ctrl.usersService.isAdmin()">admin</a>
 
 <div class="mt-2">
-<button ng-click="$ctrl.toggleForm('connexion')">Connexion</button>
-<button ng-click="$ctrl.toggleForm('register')">S'enregistrer</button>
+<button ng-show="showElement" ng-click="$ctrl.toggleForm('connexion')">Connexion</button>
+<button ng-show="!showElement" ng-click="$ctrl.toggleForm('register')">S'enregistrer</button>
 <div ng-show="!showElement" class=" w-75 h-50 d-flex flex-column align-self-center justify-self-center">
-</div>
+
 
 <h1>Login</h1>
     <form name="userForm" novalidate id="userForm">
@@ -29,7 +29,7 @@ var LoginTemplate =
         <div ng-bind="return_formconnexion"></div>
     </form>
 </div>
-
+</div>
 
 <br/>
 <br/>

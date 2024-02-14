@@ -7,6 +7,7 @@ var MoviesTemplate = `
 <a href="#/admin" ng-if="$ctrl.usersService.isAdmin()">admin</a>
 
 <div class="container mt-2">
+<button ng-click="$ctrl.sortByPopularity()">Trier par popularité</button>
     <div class="row">
         <div class="col-md-6" ng-repeat="movie in $ctrl.movies">
         <div class="card mb-3">
