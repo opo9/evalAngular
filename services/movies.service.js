@@ -7,7 +7,7 @@ mvApp.factory('MoviesService', function(GradesService, CommentsService) {
                 title: "cTitle1",
                 desc: "desc1",
                 checked: false,
-                average_grade: calculateAverageGrade(1, GradesService)? calculateAverageGrade(3, GradesService) : "Pas de note",
+                average_grade: calculateAverageGrade(1)? calculateAverageGrade(3) : "Pas de note",
                 comments: CommentsService.getCommentsByMovieId(1),
 
             },
@@ -16,7 +16,7 @@ mvApp.factory('MoviesService', function(GradesService, CommentsService) {
                 title: "bTitle2",
                 desc: "desc2",
                 checked: false,
-                average_grade: calculateAverageGrade(2, GradesService)? calculateAverageGrade(3, GradesService) : "Pas de note",
+                average_grade: calculateAverageGrade(2)? calculateAverageGrade(3) : "Pas de note",
                 comments: CommentsService.getCommentsByMovieId(2),
             },
 {
@@ -24,13 +24,12 @@ mvApp.factory('MoviesService', function(GradesService, CommentsService) {
                 title: "aTitle3",
                 desc: "desc3",
                 checked: false,
-                average_grade: calculateAverageGrade(3, GradesService)? calculateAverageGrade(3, GradesService) : "Pas de note",
+                average_grade: calculateAverageGrade(3)? calculateAverageGrade(3) : "Pas de note",
                 comments: CommentsService.getCommentsByMovieId(3),
             }
         ]
 
-        console.log(movies)
-    function calculateAverageGrade(id, GradesService) {
+    function calculateAverageGrade(id) {
         let grades = GradesService.getGradesByMovieId(id);
 
         let sum = 0;
