@@ -41,7 +41,7 @@ mvApp.factory('UsersService', function () {
         },
         getUserByEmail: function (email) {
             for (elem of users) {
-                if (elem.id == id) {
+                if (elem.mail == email) {
                     return elem
                 }
             }
