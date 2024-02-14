@@ -1,7 +1,6 @@
 mvApp.controller('LoginController', ['$scope', 'UsersService',function($scope, UsersService){
     $scope.showElement = false;
     $scope.users = UsersService.getUsers();
-    console.log(UsersService.isUser("bedos.chulee1@gmail.com", "azerty"));
 
     this.verifyAccount = function() {
         let pwdValue = $scope.pwd;
@@ -13,6 +12,7 @@ mvApp.controller('LoginController', ['$scope', 'UsersService',function($scope, U
         if (foundUser !== null) {
             $scope.return_formconnexion = "Connexion réussie";
             console.log("test");
+            UsersService.setCurrentUser(foundUser);
             if(foundUser.level === 1) {
                 window.location.href = '#/admin';
             }

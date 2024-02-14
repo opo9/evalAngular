@@ -64,7 +64,6 @@ mvApp.factory('MoviesService', function(GradesService) {
                 ]
             }
         ]
-        console.log(movies)
         let grade = [4.5, 5, 6];
     
     return {
