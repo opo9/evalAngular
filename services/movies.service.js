@@ -7,7 +7,7 @@ mvApp.factory('MoviesService', function(GradesService, CommentsService) {
                 title: "cTitle1",
                 desc: "desc1",
                 checked: false,
-                average_grade: calculateAverageGrade(1)? calculateAverageGrade(3) : "Pas de note",
+                average_grade: calculateAverageGrade(1)? calculateAverageGrade(1) : "Pas de note",
                 comments: CommentsService.getCommentsByMovieId(1),
 
             },
@@ -16,7 +16,7 @@ mvApp.factory('MoviesService', function(GradesService, CommentsService) {
                 title: "bTitle2",
                 desc: "desc2",
                 checked: false,
-                average_grade: calculateAverageGrade(2)? calculateAverageGrade(3) : "Pas de note",
+                average_grade: calculateAverageGrade(2)? calculateAverageGrade(2) : "Pas de note",
                 comments: CommentsService.getCommentsByMovieId(2),
             },
 {
