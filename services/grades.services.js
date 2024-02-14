@@ -48,7 +48,8 @@ return {
         }
     },
     addGrade: function(grade) {
-        grades.push(grade);
+        console.log(grade);
+        //grades.push(grade);
     },
     addGradeToMovie : function(id_movie, grade){
         grade.movie = id_movie;

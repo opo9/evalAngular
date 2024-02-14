@@ -28,6 +28,7 @@ mvApp.factory('MoviesService', function(GradesService, CommentsService) {
                 comments: CommentsService.getCommentsByMovieId(3),
             }
         ]
+    console.log(movies);
 
     function calculateAverageGrade(id) {
         let grades = GradesService.getGradesByMovieId(id);
