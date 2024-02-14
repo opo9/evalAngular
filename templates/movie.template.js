@@ -15,28 +15,31 @@ var MovieTemplate =
                 <p class="card-text">{{ $ctrl.movie.desc }}</p>
                 
                 <p class="card-text">Average grade : {{ $ctrl.movie.average_grade }}</p>
+                <p class="card-text">Total grade : {{ $ctrl.GradesService.getNumberOfgradeMovie($ctrl.movie.id) }}</p>
                 <p class="card-text">Comments:</p>
                 <ul class="list-group">
                     <li class="list-group-item" ng-repeat="comment in $ctrl.movie.comments">{{ comment.comment }}</li>
                 </ul>
+               
             </div>
         </div>
     </div>
     <form ng-if="$ctrl.usersService.getCurrentUserId() != null">
         <div class="form-group">
             <label for="exampleFormControlInput1">Note</label>
-            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group" >
               
-              <i ng-click="$ctrl.GradesService.addGrade(1)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
-              <i ng-click="$ctrl.GradesService.addGrade(2)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
-              <i ng-click="$ctrl.GradesService.addGrade(3)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
-              <i ng-click="$ctrl.GradesService.addGrade(4)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
-              <i ng-click="$ctrl.GradesService.addGrade(5)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-click="$ctrl.GradesService.addGrade(1, this)" class="fa-regular fa-star icon-link icon-link-hover" style="font-size: 2rem; color:#FFD43B; cursor:pointer; "></i>
+              <i ng-click="$ctrl.GradesService.addGrade(2, this)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-click="$ctrl.GradesService.addGrade(3, this)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-click="$ctrl.GradesService.addGrade(4, this)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
+              <i ng-click="$ctrl.GradesService.addGrade(5, this)" class="fa-regular fa-star" style="font-size: 2rem; color:#FFD43B; cursor:pointer"></i>
               
                
               
             </div>
         </div>
+        <div>Votre note : {{$ctrl.GradesService.getGradeByMovieAndUser()}}</div>
     </form>
     <form ng-if="$ctrl.usersService.getCurrentUserId() != null">
         <div class="form-group">

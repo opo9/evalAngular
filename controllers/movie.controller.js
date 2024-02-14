@@ -27,4 +27,5 @@ mvApp.controller('MovieController', ['UsersService', 'MoviesService', 'CommentsS
             this.movie.comments = this.CommentsService.getCommentsByMovieId(this.movie.id);
         }
     };
+
 }]);

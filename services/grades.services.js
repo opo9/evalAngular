@@ -33,6 +33,19 @@ mvApp.factory('GradesService', function($rootScope, $routeParams, UsersService) 
     ]
 
 return {
+    getGradeByMovieAndUser: function(){
+
+        var id_movie = $routeParams.movieId;
+        var id_user = parseInt(UsersService.getCurrentUserId());
+        var grade;
+        for(elem of grades){
+            if(elem.movie_id === id_movie && elem.user_id === id_user){
+                grade = elem.grade;
+
+            }
+        }
+        return elem.grade;
+    },
     getGrades: function() {
         return grades;
     },
@@ -53,7 +66,7 @@ return {
             }
         }
     },
-    addGrade: function(grade ) {
+    addGrade: function(grade, pthis ) {
         var id_movie = $routeParams.movieId;
         var id_user = parseInt(UsersService.getCurrentUserId());
 
@@ -107,8 +120,3 @@ return {
 };
 });
 
-
-// Voir pour les grades, deux fois les mêmes grades
-
-
-// Nomenclature des var
