@@ -1,4 +1,5 @@
-mvApp.controller('MoviesController', ['MoviesService','UsersService',function(MoviesService, UsersService){
+mvApp.controller('MoviesController', ['MoviesService','UsersService', 'GradesService',function(MoviesService, UsersService, GradesService){
     this.movies = MoviesService.getMovies();
     this.usersService = UsersService;
+    this.gradesService = GradesService;
 }])

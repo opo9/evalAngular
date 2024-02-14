@@ -1,4 +1,4 @@
-mvApp.factory('GradesService', function($rootScope) {
+mvApp.factory('GradesService', function($rootScope, UsersService) {
     let grades = [
         {
             id:1,
@@ -47,13 +47,41 @@ return {
             }
         }
     },
-    addGrade: function(grade) {
-        console.log(grade);
-        //grades.push(grade);
+    addGrade: function(grade, id_movie) {
+        var id_user = parseInt(UsersService.getCurrentUserId());
+
+        if(this.userAlreadyGrade(id_movie) === false){
+            var gradeJSON = {
+                id: grades.length + 1,
+                user_id: id_user,
+                movie_id: id_movie,
+                grade: grade,
+            }
+            this.addGradeToMovie(gradeJSON);
+            console.log(grades);
+        }
+        else{
+            var gradeJSON = this.getGradeByid(id_movie);
+            gradeJSON.grade = grade;
+            console.log(grades);
+
+        }
+
+
     },
-    addGradeToMovie : function(id_movie, grade){
+    addGradeToMovie : function(grade){
         grade.movie = id_movie;
         grades.push(grade);
+
+    },
+    userAlreadyGrade: function(id_movie){
+        var id_user = parseInt(UsersService.getCurrentUserId());
+        for(elem of grades){
+            if(elem.movie_id == id_movie && elem.user_id == id_user){
+                return true;
+            }
+        }
+        return false;
 
     }
 };
