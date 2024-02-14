@@ -1,5 +1,5 @@
 mvApp.controller('MoviesController', ['$scope', function($scope){
-    $scope.movies =
+    this.movies =
         [
             {
                 /*image: "image.jpg",*/
@@ -86,5 +86,5 @@ mvApp.controller('MoviesController', ['$scope', function($scope){
                 ]
             }
         ];
-    console.log($scope.movies);
+    console.log(this.movies);
 }])
