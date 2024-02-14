@@ -2,8 +2,7 @@ var MovieTemplate =
     `
     <h1>LCP Movies</h1>
 
-    <a href="#/movie">Home</a>
-    <a href="#/movies">Movies</a>
+    <a href="#/movies">Home</a>
     <a href="#/login" ng-if="$ctrl.usersService.getCurrentUserId() == null">login</a>
     <button ng-if="$ctrl.usersService.getCurrentUserId() != null" ng-click="$ctrl.usersService.logout()">logout</button>
     <a href="#/admin" ng-if="$ctrl.usersService.isAdmin()">admin</a>
@@ -42,9 +41,9 @@ var MovieTemplate =
     <form>
         <div class="form-group">
             <label for="exampleFormControlInput1">Commentaire</label>
-            <textarea class="form-control" id="" placeholder=""></textarea>
+            <textarea class="form-control" ng-model="$ctrl.newComment"  placeholder=""></textarea>
         </div>
-        <button class="btn btn-primary">Envoyer</button>
+        <button class="btn btn-primary" ng-click="$ctrl.addComment()">Envoyer</button>
     </form>
     
 `
