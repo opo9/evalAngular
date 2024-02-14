@@ -19,6 +19,7 @@ var MovieTemplate =
                 <ul class="list-group">
                     <li class="list-group-item" ng-repeat="comment in $ctrl.movie.comments">{{ comment.comment }}</li>
                 </ul>
+                <p class="card-text">Total grade : {{ $ctrl.GradesService.getNumberOfgradeMovie($ctrl.movie.id) }}</p>
             </div>
         </div>
     </div>
