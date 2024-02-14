@@ -1,21 +1,13 @@
-mvApp.factory('MoviesService', function() {
+mvApp.factory('MoviesService', function(GradesService) {
+
+
         let movies = [
             {
                 id:1,
                 title: "cTitle1",
                 desc: "desc1",
                 checked: false,
-                grade: [
-                            {
-                                star: 5
-                            },
-                            {
-                                star: 4
-                            },
-                            {
-                                star: 3
-                            },
-                        ],
+                grade: GradesService.getGradesByMovieId(1),
                 comments: [
                     {
                         user: "bob",
@@ -32,17 +24,7 @@ mvApp.factory('MoviesService', function() {
                 title: "bTitle2",
                 desc: "desc2",
                 checked: false,
-                grade: [
-                            {
-                                star: 5
-                            },
-                            {
-                                star: 4
-                            },
-                            {
-                                star: 3
-                            },
-                        ],
+                grade: GradesService.getGradesByMovieId(2),
                 comments: [
                     {
                         user: "bob",
@@ -82,20 +64,21 @@ mvApp.factory('MoviesService', function() {
                 ]
             }
         ]
+        console.log(movies)
         let grade = [4.5, 5, 6];
     
     return {
         getMovies: function() {
             return movies.sort((a, b) => a.title.localeCompare(b.title));
         },
-        getMovieById: function(id){
-            for(elem of movies){
-                if(elem.id == id){
-                  return elem
+        getMovieById: function (id) {
+            for (elem of movies) {
+                if (elem.id == id) {
+                    return elem
                 }
             }
         },
-        addMovie: function(movie) {
+        addMovie: function (movie) {
             movies.push(movie);
         },
         averageGrade: function(){

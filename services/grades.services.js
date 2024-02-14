@@ -18,11 +18,27 @@ mvApp.factory('GradesService', function($rootScope) {
             user_id: 3,
             grade: 4,
         },
+        {
+            id:3,
+            movie_id:2,
+            user_id: 3,
+            grade: 4,
+        },
     ]
 
 return {
     getGrades: function() {
         return grades;
+    },
+    getGradesByMovieId: function(id){
+        let gradesByMovie = [];
+        for(elem of grades){
+            if(elem.movie_id == id){
+                let grade = {star: elem.grade};
+                gradesByMovie.push(grade);
+            }
+        }
+        return gradesByMovie;
     },
     getGradeByid: function(id){
         for(elem of grades){
