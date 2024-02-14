@@ -1,5 +1,4 @@
-angular.
-module('moviesApp').
+mvApp.
 component('movie',{
     template: MovieTemplate,
     controller : 'MovieController'
