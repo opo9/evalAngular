@@ -1,6 +1,10 @@
 mvApp.controller('LoginController', ['$scope', 'UsersService',function($scope, UsersService){
     $scope.showElement = false;
     $scope.users = UsersService.getUsers();
+    
+    this.$onInit = function(){
+        UsersService.cached();
+    };
 
     this.verifyAccount = function() {
         let pwdValue = $scope.pwd;
@@ -31,7 +35,7 @@ mvApp.controller('LoginController', ['$scope', 'UsersService',function($scope, U
             id          :   $scope.users.length + 1,
             name        :   $scope.name,
             firstname   :   $scope.firstname,
-            email       :   $scope.email,
+            mail       :   $scope.email,
             pwd         :   $scope.pwd,
             level       :   0,
             connected   :   false

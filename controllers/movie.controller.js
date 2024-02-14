@@ -1,11 +1,16 @@
 mvApp.controller('MovieController', ['UsersService', 'MoviesService', 'CommentsService','$routeParams', 'GradesService', function (UsersService, MoviesService, CommentsService, $routeParams, GradesService) {
     let movieId = $routeParams.movieId;
-
+    this.$onInit = function(){
+        this.usersService.cached();
+        this.CommentsService.cached();
+    };
     this.movie = MoviesService.getMovieById(movieId);
     this.movie.averageGrade = MoviesService.averageGrade(this.movie.grade);
     this.usersService = UsersService;
     this.CommentsService = CommentsService;
     this.GradesService = GradesService;
+   
+
 
     this.newComment = '';
 

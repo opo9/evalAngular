@@ -65,27 +65,19 @@ return {
                 grade: grade,
             }
             this.addGradeToMovie(gradeJSON);
-            console.log(grades);
         }
         else{
             var gradeJSON = this.getGradeByid(id_movie);
             gradeJSON.grade = grade;
-            console.log(grades);
-
         }
-
-
     },
     addGradeToMovie : function(grade){
-        
         grades.push(grade);
-
     },
     getNumberOfgradeMovie: function(movieId){
         total = 0;
         grades.forEach(function(grade){
             if(grade.movie_id == movieId){
-                console.log(movieId, "+1");
                 total ++;
             }
         });

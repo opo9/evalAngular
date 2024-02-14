@@ -21,12 +21,20 @@ mvApp.factory('CommentsService', function($rootScope) {
     ]
 
     return {
+        cached: function(){
+            if(localStorage.getItem("comments") && localStorage.getItem("comments") != []){
+                comments = JSON.parse(localStorage.getItem("comments"));
+            }else{
+                localStorage.setItem("comments", JSON.stringify(comments));
+            }
+    
+        },
         getComments: function() {
-            return comments;
+            return JSON.parse(localStorage.getItem("comments"));
         },
         getCommentsByMovieId: function(id){
             let commentsByMovie = [];
-            for(elem of comments){
+            for(elem of this.getComments()){
                 if(elem.movie_id == id){
                     let comment = {comment: elem.comment};
                     commentsByMovie.push(comment);
@@ -35,7 +43,7 @@ mvApp.factory('CommentsService', function($rootScope) {
             return commentsByMovie;
         },
         getCommentById: function(id){
-            for(elem of comments){
+            for(elem of this.getComments()){
                 if(elem.id == id){
                 return elem
                 }
@@ -43,6 +51,8 @@ mvApp.factory('CommentsService', function($rootScope) {
         },
         addComment: function(comment) {
             comments.unshift(comment);
+            localStorage.removeItem("comments");
+            this.cached();
         }
     };
 });

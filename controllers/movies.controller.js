@@ -4,6 +4,10 @@ mvApp.controller('MoviesController', ['MoviesService','UsersService', 'GradesSer
     this.moviesService = MoviesService;
     this.gradesService = GradesService;
 
+    this.$onInit = function(){
+        this.usersService.cached();
+    };
+
     this.sortByPopularity = function(){
         this.movies = this.moviesService.getMoviesSortByPopularity();
     }

@@ -27,38 +27,45 @@ mvApp.factory('UsersService', function () {
             level: 0,
             connected: false
         }];
-    
+ 
     return {
+        cached: function(){
+                if(localStorage.getItem("users") && localStorage.getItem("users") != []){
+                    users = JSON.parse(localStorage.getItem("users"));
+                }else{
+                    localStorage.setItem("users", JSON.stringify(users));
+                }
+        
+        },
         setCurrentUser: function(user){
             localStorage.setItem("user", JSON.stringify(user.id));
         },
         getUsers: function () {
-            return users;
+            return JSON.parse(localStorage.getItem("users"));
         },
         logout: function(){
             localStorage.removeItem("user");
         },
         getCurrentUserId: function(){
-            console.log(localStorage.getItem("user"));
             return localStorage.getItem("user");
         },
         getUserById: function (id) {
-            for (elem of users) {
+            for (elem of this.getUsers()) {
                 if (elem.id == id) {
                     return elem
                 }
             }
         },
         getUserByEmail: function (email) {
-            for (elem of users) {
+            for (elem of this.getUsers) {
                 if (elem.mail == email) {
                     return elem
                 }
             }
         },
         isUser: function (email, pwd) {
-            let userFind = null
-            users.forEach(function (user) {
+            let userFind = null;
+            this.getUsers().forEach(function (user) {
                 if (user.mail === email && user.pwd === pwd) {
                    userFind = user 
                 }
@@ -78,6 +85,8 @@ mvApp.factory('UsersService', function () {
         },
         addUser: function (user) {
             users.push(user);
+            localStorage.removeItem("users");
+            this.cached();
         }
     };
 });
