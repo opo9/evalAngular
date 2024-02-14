@@ -4,25 +4,31 @@ mvApp.factory('GradesService', function($rootScope) {
             id:1,
             user_id: 1,
             movie_id: 1,
-            grade: 4,
+            grade: 5,
         },
         {
             id:2,
-            movie_id: 1,
+            movie_id: 2,
             user_id: 2,
-            grade: 2,
-        },
-        {
-            id:3,
-            movie_id:1,
-            user_id: 3,
             grade: 4,
         },
         {
             id:3,
             movie_id:2,
             user_id: 3,
-            grade: 4,
+            grade: 5,
+        },
+        {
+            id:3,
+            movie_id:2,
+            user_id: 3,
+            grade: 5,
+        },
+        {
+            id:4,
+            movie_id:3,
+            user_id: 3,
+            grade: 3,
         },
     ]
 
@@ -55,6 +61,27 @@ return {
         grade.movie = id_movie;
         grades.push(grade);
 
+    },
+    getNumberOfgradeMovie: function(movieId){
+        total = 0;
+        grades.forEach(function(grade){
+            if(grade.movie_id == movieId){
+                console.log(movieId, "+1");
+                total ++;
+            }
+        });
+        return total
+    },
+    getNumberOfgrade: function(){
+        return grades.length;
+    },
+    getGlobalAverageGrade: function(){
+        total = 0;
+        grades.forEach(function(grade){
+            total += grade.grade
+        });
+
+        return total / grades.length;
     }
 };
 });
