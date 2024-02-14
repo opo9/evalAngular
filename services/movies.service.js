@@ -1,6 +1,7 @@
-mvApp.factory('MoviesService', function($rootScope) {
+mvApp.factory('MoviesService', function() {
         let movies = [
             {
+                id:1,
                 title: "title1",
                 desc: "desc1",
                 checked: false,
@@ -27,6 +28,7 @@ mvApp.factory('MoviesService', function($rootScope) {
                 ]
             },
             {
+                id:2,
                 title: "title2",
                 desc: "desc2",
                 checked: false,
@@ -58,9 +60,9 @@ mvApp.factory('MoviesService', function($rootScope) {
         getMovies: function() {
             return movies;
         },
-        getMovieByTitle: function(title){
+        getMovieById: function(id){
             for(elem of movies){
-                if(elem.title == title){
+                if(elem.id == id){
                   return elem
                 }
             }

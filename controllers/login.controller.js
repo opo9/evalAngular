@@ -1,67 +1,26 @@
-mvApp.controller('LoginController', ['$scope', function($scope, $location){
+mvApp.controller('LoginController', ['$scope', function($scope, UsersService){
     $scope.showElement = false;
-    $scope.users = [
-        {
-            id          :   1,
-            name        :   "Bedos",
-            firstname   :   "Chulee",
-            mail        :   "bedos.chulee1@gmail.com",
-            pwd         :   "azerty",
-            level       :   1,
-            connected   :   false
-        },
-        {
-            id          :   2,
-            name        :   "Smati",
-            firstname   :   "Lina",
-            email       :   "smati.lina@gmail.com",
-            pwd         :   "pwd",
-            level       :   2,
-            connected   :   false
-        },
-        {
-            id          :   3,
-            name        :   "Hoareau",
-            firstname   :   "Paul",
-            email       :   "hoareau.paul@gmail.com",
-            pwd         :   "paulo",
-            level       :   0,
-            connected   :   false
-        }
-    ];
-
+    $scope.users = UsersService.getUsers();
 
     this.verifyAccount = function() {
         let pwdValue = $scope.pwd;
         let emailValue = $scope.email;
 
-        let foundUser = null;
-        $scope.users.forEach(function(user) {
-            if(user.mail === emailValue && user.pwd === pwdValue) {
-                user.connected = true;
-                foundUser = user;
-            }
-
-        });
+        let foundUser = UsersService.isUser(emailValue, pwdValue);
+     
         if (foundUser !== null) {
             $scope.return_formconnexion = "Connexion réussie";
             if(foundUser.level === 1) {
-                window.location.href = '#/';
-
+                window.location.href = '#/admin';
             }
             else{
-
+                window.location.href = '#/'
             }
-
         } else {
             $scope.return_formconnexion = "Utilisateur ou mot de passe incorrect.";
         }
         $scope.pwd = '';
         $scope.email = '';
-
-
-
-
     };
     this.createAccount = function() {
 
@@ -74,20 +33,15 @@ mvApp.controller('LoginController', ['$scope', function($scope, $location){
             level       :   0,
             connected   :   false
         };
-        $scope.users.push(newUser);
+        UsersService.addUser(newUser);
         $scope.return_formregister = "Compte créé avec succès";
         $scope.pwd = '';
         $scope.email = '';
         $scope.name = '';
         $scope.firstname = '';
-
     };
     this.toggleForm = function(data) {
         $scope.showElement = !$scope.showElement;
-
     };
-
-
-
 }]);
 
