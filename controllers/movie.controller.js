@@ -1,5 +1,6 @@
-mvApp.controller('MovieController', ['UsersService', 'MoviesService', 'CommentsService', function (UsersService, MoviesService, CommentsService) {
-    this.movie = MoviesService.getMovieById(1);
+mvApp.controller('MovieController', ['UsersService', 'MoviesService', 'CommentsService','$routeParams', function (UsersService, MoviesService, CommentsService, $routeParams) {
+    let movieId = $routeParams.movieId;
+    this.movie = MoviesService.getMovieById(movieId);
     this.movie.averageGrade = MoviesService.averageGrade(this.movie.grade);
     this.usersService = UsersService;
     this.CommentsService = CommentsService;

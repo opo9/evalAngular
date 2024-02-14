@@ -1,8 +1,7 @@
 var AdminTemplate= `
 <h1>LCP Movies</h1>
 
-<a href="#/movie">Home</a>
-<a href="#/movies">Movies</a>
+<a href="#/">Home</a>
 <a href="#/admin" ng-if="$ctrl.usersService.isAdmin()">admin</a>
     <table>
         <thead>
