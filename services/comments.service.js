@@ -21,7 +21,7 @@ mvApp.factory('CommentsService', function($rootScope) {
     ]
 
     return {
-        getGrades: function() {
+        getComments: function() {
             return comments;
         },
         getCommentsByMovieId: function(id){
@@ -42,7 +42,7 @@ mvApp.factory('CommentsService', function($rootScope) {
             }
         },
         addComment: function(comment) {
-            comments.push(comment);
+            comments.unshift(comment);
         }
     };
 });

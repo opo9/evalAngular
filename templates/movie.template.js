@@ -47,9 +47,9 @@ var MovieTemplate =
     <form>
         <div class="form-group">
             <label for="exampleFormControlInput1">Commentaire</label>
-            <textarea class="form-control" id="" placeholder=""></textarea>
+            <textarea class="form-control" ng-model="$ctrl.newComment"  placeholder=""></textarea>
         </div>
-        <button class="btn btn-primary">Envoyer</button>
+        <button class="btn btn-primary" ng-click="$ctrl.addComment()">Envoyer</button>
     </form>
     
 `
