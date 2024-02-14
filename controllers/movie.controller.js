@@ -1,10 +1,8 @@
 mvApp.controller('MovieController', function(){
-    this.$onInit = function(){
-            console.log("toto")
-        }
     this.movies = [
         {
-            title: "Title 1",
+            /*image: "image.jpg",*/
+            title: "Film title 1",
             description: "Description 1",
             grade: [
                 { star: 5 },

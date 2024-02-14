@@ -4,16 +4,19 @@ var LoginTemplate =
 <button ng-click="$ctrl.toggleForm('register')">S'enregistrer</button>
 <div ng-show="!showElement" class=" w-75 h-50 d-flex flex-column align-self-center justify-self-center">
 <h1>Login</h1>
-    <form>
+    <form name="userForm" novalidate id="userForm">
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="connexion_email" ng-model="email">
+            <input type="email" class="form-control" id="connexion_email" ng-model="email" name="email" required>
+            <p ng-show="userForm.email.$error.required && !userForm.email.$pristine">L'email est requis.</p>
+            <p ng-show="userForm.email.$error.email && !userForm.email.$pristine">L'email n'est pas valide.</p>
         </div>
         <div class="form-group">
             <label for="pwd">Password </label>
-            <input type="password" class="form-control" id="connexion_pwd" ng-model="pwd">
+            <input type="password" class="form-control" id="connexion_pwd" ng-model="pwd" name="pwd" required>
+            <p ng-show="userForm.pwd.$error.required && !userForm.pwd.$pristine">Le mot de passe est requis.</p>
         </div>
-        <input type="button" value="Connexion" ng-click="$ctrl.verifyAccount()">
+        <input type="button" value="Connexion" ng-click="$ctrl.verifyAccount()" ng-disabled="userForm.$invalid">
         <div ng-bind="return_formconnexion"></div>
     </form>
 </div>
@@ -22,7 +25,7 @@ var LoginTemplate =
 <br/>
 <br/>
 <br/>
-<div ng-show="showElement" class="w-50 h-50 d-flex align-self-center justify-self-center">
+<div ng-show="showElement" class="w-50 h-50 d-flex flex-column align-self-center justify-self-center">
     <h1>Register</h1>
     <form>
         <div class="form-group">
